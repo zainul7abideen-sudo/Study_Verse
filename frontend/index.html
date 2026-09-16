@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyVerse — All-in-One Student Workspace & AI Study Engine</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🎓</div>
+        <div class="brand-text">
+          <h2>StudyVerse</h2>
+          <span>Student Workspace</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-item active" data-tab="courses">
+          <span class="icon">📚</span> Courses & Attendance
+        </button>
+        <button class="nav-item" data-tab="ai-assistant">
+          <span class="icon">🤖</span> AI Study Summarizer
+        </button>
+        <button class="nav-item" data-tab="flashcards">
+          <span class="icon">🃏</span> Flashcards & Recall
+        </button>
+        <button class="nav-item" data-tab="assignments">
+          <span class="icon">📝</span> Assignment Radar
+        </button>
+        <button class="nav-item" data-tab="resources">
+          <span class="icon">📖</span> Resource Vault
+        </button>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="user-avatar">ZA</div>
+        <div class="user-info">
+          <h4>Zainul Abideen</h4>
+          <p>CSE • 6th Sem</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="top-bar">
+        <div>
+          <h1 id="page-title">Enrolled Courses & Academic Metrics</h1>
+          <p id="page-subtitle">Track course syllabus progress, real-time attendance thresholds, and grade targets.</p>
+        </div>
+        <div class="system-status">
+          <span class="status-dot"></span>
+          <span>Backend API Connected (Port 4000)</span>
+        </div>
+      </header>
+
+      <!-- Tab: Courses -->
+      <section id="tab-courses" class="tab-pane active">
+        <div class="grid-cards" id="courses-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Tab: AI Assistant -->
+      <section id="tab-ai-assistant" class="tab-pane">
+        <div class="ai-workspace">
+          <div class="panel">
+            <h3>📝 Paste Lecture Notes / Concepts</h3>
+            <p>Our NLP engine condenses notes into structured key takeaways and exam-focus summaries.</p>
+            <textarea id="ai-input-notes" rows="8" placeholder="Paste raw lecture transcripts, textbook paragraphs, or concept explanations here..."></textarea>
+            <div class="form-row">
+              <select id="ai-subject-select">
+                <option value="Operating Systems">Operating Systems</option>
+                <option value="DBMS">DBMS</option>
+                <option value="DSA in Java">DSA in Java</option>
+                <option value="Computer Networks">Computer Networks</option>
+              </select>
+              <button class="btn btn-primary" id="btn-run-ai">✨ Condense & Analyze Notes</button>
+            </div>
+          </div>
+          <div class="panel" id="ai-output-panel">
+            <h3>⚡ AI Summary & Key Takeaways</h3>
+            <div id="ai-output-content" class="empty-state">
+              <span>Click "Condense & Analyze Notes" to generate structured study points.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab: Flashcards -->
+      <section id="tab-flashcards" class="tab-pane">
+        <div class="flashcard-header">
+          <h3>🃏 Active Recall Practice Cards</h3>
+          <button class="btn btn-secondary" id="btn-generate-ai-cards">🤖 Auto-Generate from Coursework</button>
+        </div>
+        <div class="flashcards-grid" id="flashcards-container">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Tab: Assignments -->
+      <section id="tab-assignments" class="tab-pane">
+        <div class="assignments-container">
+          <div class="panel">
+            <h3>➕ Add New Academic Task / Assignment</h3>
+            <form id="form-add-assignment">
+              <input type="text" id="asg-title" placeholder="Assignment Title (e.g. Implement B+ Tree Index)" required>
+              <div class="form-grid">
+                <select id="asg-course" required>
+                  <option value="CS301">CS301 - Operating Systems</option>
+                  <option value="CS302">CS302 - DBMS</option>
+                  <option value="CS303">CS303 - DSA in Java</option>
+                  <option value="CS304">CS304 - Computer Networks</option>
+                </select>
+                <input type="date" id="asg-due" required>
+                <select id="asg-priority">
+                  <option value="Urgent">Urgent Priority</option>
+                  <option value="High">High Priority</option>
+                  <option value="Normal">Normal Priority</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Add to Assignment Radar</button>
+            </form>
+          </div>
+          <div class="panel">
+            <h3>📋 Upcoming Deadlines</h3>
+            <div class="assignment-list" id="assignments-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab: Resources -->
+      <section id="tab-resources" class="tab-pane">
+        <div class="resources-grid" id="resources-container">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

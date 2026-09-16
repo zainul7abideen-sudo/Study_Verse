@@ -1,0 +1,25 @@
+{
+  "name": "studyverse-platform",
+  "version": "1.0.0",
+  "description": "All-in-One Student Workspace & AI Study Engine (Courses, AI Summarizer, Flashcards, Assignments)",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "test": "node backend/tests/api.test.js"
+  },
+  "keywords": [
+    "student-productivity",
+    "ai-study-assistant",
+    "flashcards",
+    "active-recall",
+    "course-tracker",
+    "express"
+  ],
+  "author": "Zainul Abideen",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.3"
+  }
+}
