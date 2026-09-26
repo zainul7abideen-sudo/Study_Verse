@@ -97,7 +97,55 @@ export const CURATED_CATALOG: Book[] = [
     createdAt: '2026-09-01T15:00:00Z'
   },
 
-  // 2. Computer Science & IT Core
+  // 2. C / C++ / Java / Data Structures
+  {
+    id: 'b-prog-001',
+    title: 'Programming in ANSI C',
+    author: 'E. Balagurusamy',
+    isbn: '978-9353165130',
+    edition: '8th Edition',
+    publisher: 'McGraw Hill',
+    category: 'Computer Science & IT',
+    description: 'Foundational C programming textbook taught across Indian engineering universities covering pointers, structures, unions, dynamic memory allocation, and bitwise operations.',
+    coverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80',
+    rating: 4.8,
+    ratingsCount: 4100,
+    pages: 580,
+    type: 'aggregated_new',
+    prices: [
+      { vendor: 'Amazon', price: 440, originalPrice: 575, inStock: true, deliveryDays: 2, url: 'https://amazon.in', isLowest: false },
+      { vendor: 'Flipkart', price: 399, originalPrice: 575, inStock: true, deliveryDays: 2, url: 'https://flipkart.com', isLowest: true },
+      { vendor: 'Bookswagon', price: 460, originalPrice: 575, inStock: true, deliveryDays: 4, url: 'https://bookswagon.com', isLowest: false }
+    ],
+    lowestPrice: 399,
+    status: 'available',
+    createdAt: '2026-09-02T10:00:00Z'
+  },
+  {
+    id: 'b-prog-002',
+    title: 'Data Structures and Algorithms in C',
+    author: 'Reema Thareja',
+    isbn: '978-0198099307',
+    edition: '2nd Edition',
+    publisher: 'Oxford University Press',
+    category: 'Computer Science & IT',
+    description: 'Comprehensive guide to arrays, linked lists, stacks, queues, binary trees, AVL trees, graphs, hashing, sorting algorithms, and complexity analysis.',
+    coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80',
+    rating: 4.8,
+    ratingsCount: 2980,
+    pages: 560,
+    type: 'aggregated_new',
+    prices: [
+      { vendor: 'Amazon', price: 490, originalPrice: 650, inStock: true, deliveryDays: 2, url: 'https://amazon.in', isLowest: false },
+      { vendor: 'Flipkart', price: 450, originalPrice: 650, inStock: true, deliveryDays: 3, url: 'https://flipkart.com', isLowest: true },
+      { vendor: 'Bookswagon', price: 510, originalPrice: 650, inStock: true, deliveryDays: 4, url: 'https://bookswagon.com', isLowest: false }
+    ],
+    lowestPrice: 450,
+    status: 'available',
+    createdAt: '2026-09-02T12:00:00Z'
+  },
+
+  // 3. Computer Science Core (OS, Algorithms, DBMS, Networks, COA, AI)
   {
     id: 'b-001',
     title: 'Operating System Concepts (10th Global Edition)',
@@ -238,8 +286,31 @@ export const CURATED_CATALOG: Book[] = [
     status: 'available',
     createdAt: '2026-09-05T10:00:00Z'
   },
+  {
+    id: 'b-ml-001',
+    title: 'Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow',
+    author: 'Aurélien Géron',
+    isbn: '978-1098125974',
+    edition: '3rd Edition',
+    publisher: "O'Reilly Media",
+    category: 'Computer Science & IT',
+    description: 'Practical guide to machine learning concepts, regression, classification, neural networks, convolutional nets, transformers, and deployment.',
+    coverImage: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&auto=format&fit=crop&q=80',
+    rating: 4.9,
+    ratingsCount: 3890,
+    pages: 856,
+    type: 'aggregated_new',
+    prices: [
+      { vendor: 'Amazon', price: 1250, originalPrice: 1850, inStock: true, deliveryDays: 2, url: 'https://amazon.in', isLowest: true },
+      { vendor: 'Flipkart', price: 1320, originalPrice: 1850, inStock: true, deliveryDays: 3, url: 'https://flipkart.com', isLowest: false },
+      { vendor: 'Bookswagon', price: 1390, originalPrice: 1850, inStock: true, deliveryDays: 5, url: 'https://bookswagon.com', isLowest: false }
+    ],
+    lowestPrice: 1250,
+    status: 'available',
+    createdAt: '2026-09-05T11:00:00Z'
+  },
 
-  // 3. Basic Sciences & Engineering Mathematics
+  // 4. Basic Sciences & Engineering Mathematics
   {
     id: 'b-007',
     title: 'Higher Engineering Mathematics (44th Edition)',
@@ -286,8 +357,31 @@ export const CURATED_CATALOG: Book[] = [
     status: 'available',
     createdAt: '2026-09-05T12:00:00Z'
   },
+  {
+    id: 'b-phy-002',
+    title: 'Concepts of Physics (Vol 1 & Vol 2)',
+    author: 'Dr. H.C. Verma',
+    isbn: '978-8177091878',
+    edition: 'Classic Edition',
+    publisher: 'Bharati Bhawan Publishers',
+    category: 'Basic Sciences & Math',
+    description: 'The undisputed physics bible covering mechanics, thermodynamics, optics, electromagnetism, and modern physics with profound conceptual problems.',
+    coverImage: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&auto=format&fit=crop&q=80',
+    rating: 5.0,
+    ratingsCount: 14500,
+    pages: 940,
+    type: 'aggregated_new',
+    prices: [
+      { vendor: 'Amazon', price: 740, originalPrice: 950, inStock: true, deliveryDays: 2, url: 'https://amazon.in', isLowest: false },
+      { vendor: 'Flipkart', price: 690, originalPrice: 950, inStock: true, deliveryDays: 2, url: 'https://flipkart.com', isLowest: true },
+      { vendor: 'Bookswagon', price: 760, originalPrice: 950, inStock: true, deliveryDays: 3, url: 'https://bookswagon.com', isLowest: false }
+    ],
+    lowestPrice: 690,
+    status: 'available',
+    createdAt: '2026-09-05T14:00:00Z'
+  },
 
-  // 4. Mechanical & Civil Engineering
+  // 5. Mechanical & Civil Engineering
   {
     id: 'b-009',
     title: 'Engineering Thermodynamics (6th Edition)',
@@ -335,7 +429,7 @@ export const CURATED_CATALOG: Book[] = [
     createdAt: '2026-09-06T11:00:00Z'
   },
 
-  // 5. Medical & Dental
+  // 6. Medical & Dental
   {
     id: 'b-011',
     title: "Guyton and Hall Textbook of Medical Physiology",
@@ -360,7 +454,7 @@ export const CURATED_CATALOG: Book[] = [
     createdAt: '2026-09-06T12:00:00Z'
   },
 
-  // 6. Commerce & Management
+  // 7. Commerce & Management
   {
     id: 'b-012',
     title: 'Financial Management: Theory and Practice (10th Edition)',
@@ -385,7 +479,7 @@ export const CURATED_CATALOG: Book[] = [
     createdAt: '2026-09-07T16:00:00Z'
   },
 
-  // 7. Competitive Exams (GATE / CAT / UPSC)
+  // 8. Competitive Exams (GATE / CAT / UPSC)
   {
     id: 'b-013',
     title: 'GATE 2026 Computer Science & IT Topic-Wise Solved Papers',
@@ -408,17 +502,63 @@ export const CURATED_CATALOG: Book[] = [
     lowestPrice: 680,
     status: 'available',
     createdAt: '2026-09-08T09:00:00Z'
+  },
+  {
+    id: 'b-014',
+    title: 'Quantitative Aptitude for Competitive Examinations',
+    author: 'Dr. R.S. Aggarwal',
+    isbn: '978-9352534029',
+    edition: 'Revised Edition',
+    publisher: 'S. Chand',
+    category: 'Competitive Exams (GATE/CAT/UPSC)',
+    description: 'The standard preparatory book for campus placements, CAT, Bank PO, SSC, and UPSC CSAT covering arithmetic, algebra, and data interpretation.',
+    coverImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format&fit=crop&q=80',
+    rating: 4.8,
+    ratingsCount: 9400,
+    pages: 960,
+    type: 'aggregated_new',
+    prices: [
+      { vendor: 'Amazon', price: 540, originalPrice: 750, inStock: true, deliveryDays: 2, url: 'https://amazon.in', isLowest: false },
+      { vendor: 'Flipkart', price: 495, originalPrice: 750, inStock: true, deliveryDays: 2, url: 'https://flipkart.com', isLowest: true },
+      { vendor: 'Bookswagon', price: 530, originalPrice: 750, inStock: true, deliveryDays: 4, url: 'https://bookswagon.com', isLowest: false }
+    ],
+    lowestPrice: 495,
+    status: 'available',
+    createdAt: '2026-09-08T11:00:00Z'
   }
 ];
 
-// Common stopwords to exclude from polluting token-matching searches
+// Common student acronyms and synonyms to automatically expand queries
+const SYNONYM_MAP: Record<string, string[]> = {
+  'os': ['operating system', 'silberschatz', 'galvin'],
+  'dbms': ['database system concepts', 'korth', 'sql'],
+  'cn': ['computer networks', 'peterson', 'tanenbaum'],
+  'coa': ['computer organization', 'architecture', 'stallings'],
+  'cao': ['computer architecture', 'organization', 'stallings'],
+  'dsa': ['data structures', 'algorithms', 'cormen', 'thareja'],
+  'algo': ['algorithms', 'cormen', 'clrs'],
+  'clrs': ['introduction to algorithms', 'cormen', 'leiserson'],
+  'ai': ['artificial intelligence', 'russell', 'norvig'],
+  'ml': ['machine learning', 'scikit', 'tensorflow', 'géron'],
+  'math': ['engineering mathematics', 'grewal', 'calculus'],
+  'maths': ['engineering mathematics', 'grewal', 'calculus'],
+  'm1': ['engineering mathematics', 'grewal', 'calculus'],
+  'm2': ['engineering mathematics', 'differential equations', 'grewal'],
+  'm3': ['engineering mathematics', 'transform calculus', 'grewal'],
+  'ep': ['engineering physics', 'malik', 'singh'],
+  'physics': ['engineering physics', 'concepts of physics', 'verma'],
+  'hc verma': ['concepts of physics', 'verma'],
+  'thermo': ['engineering thermodynamics', 'nag'],
+  'som': ['strength of materials', 'rajput'],
+  'mos': ['mechanics of solids', 'strength of materials', 'rajput'],
+  'gate': ['gate topic-wise solved papers', 'made easy']
+};
+
 const STOP_WORDS = new Set([
   'a', 'an', 'the', 'in', 'on', 'at', 'to', 'for', 'of', 'and', 'or', 'by', 'with', 
   'from', 'as', 'is', 'it', 'its', 'using', 'use', 'uses', 'used', 'approach', 
   'problem', 'solving', 'book', 'books', 'textbook', 'textbooks', 'edition', 'ed',
-  'volume', 'vol', 'introduction', 'intro', 'fundamentals', 'fundamental', 'concepts',
-  'principles', 'applied', 'modern', 'engineering', 'science', 'theory', 'guide',
-  'semester', 'sem', 'university', 'college', 'student', 'prescribed', 'syllabus'
+  'volume', 'vol', 'semester', 'sem', 'university', 'college', 'student', 'syllabus'
 ]);
 
 /**
@@ -431,11 +571,17 @@ export async function searchGoogleBooks(query: string): Promise<Book[]> {
   }
 
   const cleanQ = query.trim().toLowerCase();
-  const searchTokens = cleanQ.split(/[\s:,\-_]+/).filter(t => t.length > 1);
+  const searchTokens = cleanQ.split(/[\s:,\-_]+/).filter(t => t.length > 0);
   const substantiveTokens = searchTokens.filter(t => !STOP_WORDS.has(t));
-  
-  // Use substantive tokens if available, otherwise search tokens
   const keyTokens = substantiveTokens.length > 0 ? substantiveTokens : searchTokens;
+
+  // Check synonym expansions
+  const synonymTerms: string[] = [];
+  searchTokens.forEach(t => {
+    if (SYNONYM_MAP[t]) {
+      synonymTerms.push(...SYNONYM_MAP[t]);
+    }
+  });
 
   // 1. First Tier: Strict Relevance-Scored Match in Curated Catalog
   const scoredMatches = CURATED_CATALOG.map(book => {
@@ -447,63 +593,91 @@ export async function searchGoogleBooks(query: string): Promise<Book[]> {
     const isbnClean = book.isbn.replace(/\D/g, '');
 
     // Exact full title match (Massive priority)
-    if (titleLower === cleanQ) score += 1000;
-    else if (titleLower.includes(cleanQ)) score += 500;
+    if (titleLower === cleanQ) score += 1200;
+    else if (titleLower.includes(cleanQ)) score += 600;
     
     // Author exact match
-    if (authorLower.includes(cleanQ)) score += 400;
+    if (authorLower.includes(cleanQ)) score += 500;
 
     // ISBN match
-    if (isbnClean.length > 4 && isbnClean.includes(cleanQ.replace(/\D/g, ''))) score += 600;
+    if (isbnClean.length > 4 && isbnClean.includes(cleanQ.replace(/\D/g, ''))) score += 700;
 
-    // Substantive token matches
+    // Token match
     let matchedKeyTokens = 0;
     keyTokens.forEach(token => {
       if (titleLower.includes(token)) {
-        score += 120;
+        score += 150;
         matchedKeyTokens++;
       }
       if (authorLower.includes(token)) {
-        score += 90;
+        score += 100;
         matchedKeyTokens++;
       }
     });
 
-    // If ALL substantive tokens match in title/author, boost significantly
-    if (keyTokens.length > 0 && matchedKeyTokens === keyTokens.length) {
-      score += 300;
+    // Synonym matches
+    synonymTerms.forEach(syn => {
+      if (titleLower.includes(syn) || descLower.includes(syn)) {
+        score += 120;
+        matchedKeyTokens++;
+      }
+    });
+
+    // If ALL tokens matched in title or author
+    if (keyTokens.length > 0 && matchedKeyTokens >= keyTokens.length) {
+      score += 350;
     }
 
-    // Only allow description/category bonus IF at least one substantive token was in title/author
+    // Category / Description bonus
     if (matchedKeyTokens > 0) {
       keyTokens.forEach(token => {
-        if (descLower.includes(token)) score += 10;
-        if (catLower.includes(token)) score += 15;
+        if (descLower.includes(token)) score += 15;
+        if (catLower.includes(token)) score += 20;
       });
     }
 
     return { book, score };
   })
-  .filter(item => item.score >= 100) // Strict threshold to prevent unrelated books from showing!
+  .filter(item => item.score >= 100)
   .sort((a, b) => b.score - a.score)
   .map(item => item.book);
 
-  // 2. Second Tier: Real-Time Google Books API Query
+  // If high-relevance curated matches exist (>= 1), return immediately for 0ms ultra-fast UI rendering
+  if (scoredMatches.length >= 1) {
+    return scoredMatches;
+  }
+
+  // 2. Second Tier: Real-Time Google Books API Query with Rapid 1500ms Timeout
   let apiBooks: Book[] = [];
   try {
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=10`);
-    if (response.ok) {
-      const data = await response.json();
-      if (data.items && data.items.length > 0) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 1500);
+
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=10`,
+      { 
+        signal: controller.signal,
+        headers: { 'Accept': 'application/json' }
+      }
+    ).catch(() => null);
+    clearTimeout(timeoutId);
+
+    if (response && response.ok) {
+      const data = await response.json().catch(() => null);
+      if (data && data.items && data.items.length > 0) {
         apiBooks = data.items
           .map((item: any, idx: number) => {
             const vol = item.volumeInfo || {};
             const title = vol.title || '';
             const titleLower = title.toLowerCase();
 
-            // Verify Google Books item has at least some relevance to the search
-            const hasRelevance = keyTokens.some(k => titleLower.includes(k) || (vol.authors?.join(' ') || '').toLowerCase().includes(k));
-            if (!hasRelevance && keyTokens.length > 0) return null;
+            // Verify Google Books item has relevance
+            const hasRelevance = keyTokens.some(k => 
+              titleLower.includes(k) || 
+              (vol.authors?.join(' ') || '').toLowerCase().includes(k) ||
+              (vol.description || '').toLowerCase().includes(k)
+            );
+            if (!hasRelevance && keyTokens.length > 0 && synonymTerms.length === 0) return null;
 
             const isbnObj = vol.industryIdentifiers?.find((i: any) => i.type.includes('13')) || vol.industryIdentifiers?.[0];
             const isbn = isbnObj ? isbnObj.identifier : `978-${Math.floor(1000000000 + Math.random() * 9000000000)}`;
@@ -551,11 +725,10 @@ export async function searchGoogleBooks(query: string): Promise<Book[]> {
             };
           })
           .filter((b: any): b is Book => b !== null);
-
       }
     }
   } catch (err) {
-    console.warn('Google Books API client query warning:', err);
+    // API fetch error or timeout, proceed to synthesizer fallback
   }
 
   // Combine local matches and API books with strict relevance
@@ -567,19 +740,29 @@ export async function searchGoogleBooks(query: string): Promise<Book[]> {
   });
 
   // 3. Third Tier: Dedicated Subject-Specific Synthesizer if no local or API matches
-  // Generates 3-4 SPECIFIC, RELEVANT editions exclusively for the user's queried subject
+  // Generates 3 SPECIFIC, RELEVANT editions exclusively for the user's queried subject
   if (combined.length === 0) {
     const formattedSubject = query.split(/[\s:,\-_]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     
+    // Determine appropriate category
+    const qLower = query.toLowerCase();
+    let dynamicCategory: BookCategory = 'Computer Science & IT';
+    if (qLower.includes('math') || qLower.includes('physic') || qLower.includes('chem') || qLower.includes('calculus')) dynamicCategory = 'Basic Sciences & Math';
+    else if (qLower.includes('mech') || qLower.includes('thermo') || qLower.includes('fluid') || qLower.includes('solid')) dynamicCategory = 'Mechanical Engineering';
+    else if (qLower.includes('medic') || qLower.includes('physiol') || qLower.includes('anat') || qLower.includes('pharma') || qLower.includes('mbbs')) dynamicCategory = 'Medical & Dental';
+    else if (qLower.includes('financ') || qLower.includes('manage') || qLower.includes('account') || qLower.includes('mba') || qLower.includes('b.com')) dynamicCategory = 'Commerce & MBA';
+    else if (qLower.includes('law') || qLower.includes('politi') || qLower.includes('history')) dynamicCategory = 'Law & Humanities';
+    else if (qLower.includes('gate') || qLower.includes('upsc') || qLower.includes('cat') || qLower.includes('exam') || qLower.includes('aptitude')) dynamicCategory = 'Competitive Exams (GATE/CAT/UPSC)';
+
     const specificGeneratedResults: Book[] = [
       {
         id: `spec-res-1-${Date.now()}`,
-        title: `${formattedSubject}: Prescribed University Edition`,
+        title: `${formattedSubject}: Prescribed University Standard Edition`,
         author: 'Academic Faculty Board & Subject Council',
         isbn: `978-93${Math.floor(10000000 + Math.random() * 90000000)}`,
         edition: '2026 Latest Unified Syllabus Edition',
         publisher: 'Oxford / Pearson Academic Press',
-        category: 'Computer Science & IT',
+        category: dynamicCategory,
         description: `Prescribed standard textbook and comprehensive lecture notes for "${query}". Covers complete syllabus modules, proofs, and solved university semester question papers.`,
         coverImage: 'https://images.unsplash.com/photo-1532012164546-f432f2e37271?w=600&auto=format&fit=crop&q=80',
         rating: 4.8,
@@ -598,12 +781,12 @@ export async function searchGoogleBooks(query: string): Promise<Book[]> {
       },
       {
         id: `spec-res-2-${Date.now()}`,
-        title: `${formattedSubject}: Solved Question Bank & Model Papers`,
+        title: `${formattedSubject}: Solved Question Bank & Previous Years Papers`,
         author: 'University Examination Committee',
         isbn: `978-93${Math.floor(10000000 + Math.random() * 90000000)}`,
         edition: '2025-2026 Solved Edition',
         publisher: 'Khanna / S. Chand Academic',
-        category: 'Computer Science & IT',
+        category: dynamicCategory,
         description: `Topic-wise previous 10 years solved university papers, 2-mark key definitions, and 10-mark design derivations for "${query}".`,
         coverImage: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
         rating: 4.7,
@@ -626,7 +809,7 @@ export async function searchGoogleBooks(query: string): Promise<Book[]> {
         isbn: `978-81${Math.floor(10000000 + Math.random() * 90000000)}`,
         edition: '3rd Revised Edition',
         publisher: 'McGraw Hill Education',
-        category: 'Computer Science & IT',
+        category: dynamicCategory,
         description: `Comprehensive in-depth reference manual with real-world case studies, mathematical derivations, and laboratory exercises for "${query}".`,
         coverImage: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&auto=format&fit=crop&q=80',
         rating: 4.9,
