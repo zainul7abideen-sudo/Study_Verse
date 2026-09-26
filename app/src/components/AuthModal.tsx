@@ -361,8 +361,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">University Board / System *</label>
+                  <label htmlFor="reg-university-select" className="block text-xs font-semibold theme-text-heading mb-1">University Board / System *</label>
                   <select
+                    id="reg-university-select"
+                    name="university"
+                    aria-label="University Board or System"
                     value={regUniversity}
                     onChange={(e) => setRegUniversity(e.target.value)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none cursor-pointer font-medium"
@@ -381,8 +384,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Campus City & State</label>
+                  <label htmlFor="reg-campus-input" className="block text-xs font-semibold theme-text-heading mb-1">Campus City & State</label>
                   <input
+                    id="reg-campus-input"
+                    name="campusCity"
                     type="text"
                     placeholder="e.g. Lucknow, UP or Bangalore, Karnataka"
                     value={regCampus}
@@ -392,8 +397,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">College / Institute Name *</label>
+                  <label htmlFor="reg-college-input" className="block text-xs font-semibold theme-text-heading mb-1">College / Institute Name *</label>
                   <input
+                    id="reg-college-input"
+                    name="college"
                     type="text"
                     required
                     placeholder="e.g. Institute of Engineering and Technology (IET Lucknow) / BMS College"
@@ -414,8 +421,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Degree Program</label>
+                  <label htmlFor="reg-degree-select" className="block text-xs font-semibold theme-text-heading mb-1">Degree Program</label>
                   <select
+                    id="reg-degree-select"
+                    name="degree"
+                    aria-label="Degree Program"
                     value={regDegree}
                     onChange={(e) => setRegDegree(e.target.value)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none cursor-pointer"
@@ -431,8 +441,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Branch / Major Specialization</label>
+                  <label htmlFor="reg-branch-select" className="block text-xs font-semibold theme-text-heading mb-1">Branch / Major Specialization</label>
                   <select
+                    id="reg-branch-select"
+                    name="branch"
+                    aria-label="Branch or Major Specialization"
                     value={regBranch}
                     onChange={(e) => setRegBranch(e.target.value)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none cursor-pointer"
@@ -450,8 +463,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Class / Academic Year</label>
+                  <label htmlFor="reg-academic-year-select" className="block text-xs font-semibold theme-text-heading mb-1">Class / Academic Year</label>
                   <select
+                    id="reg-academic-year-select"
+                    name="academicYear"
+                    aria-label="Class or Academic Year"
                     value={regAcademicYear}
                     onChange={(e) => setRegAcademicYear(e.target.value)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none cursor-pointer"
@@ -465,8 +481,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Current Semester</label>
+                  <label htmlFor="reg-semester-select" className="block text-xs font-semibold theme-text-heading mb-1">Current Semester</label>
                   <select
+                    id="reg-semester-select"
+                    name="semester"
+                    aria-label="Current Semester"
                     value={regSemester}
                     onChange={(e) => setRegSemester(e.target.value)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none cursor-pointer"
@@ -483,8 +502,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">University Roll Number / ID</label>
+                  <label htmlFor="reg-roll-number-input" className="block text-xs font-semibold theme-text-heading mb-1">University Roll Number / ID</label>
                   <input
+                    id="reg-roll-number-input"
+                    name="rollNumber"
                     type="text"
                     placeholder="e.g. 2200520100045"
                     value={regRollNumber}
@@ -494,8 +515,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Account Role</label>
+                  <label htmlFor="reg-role-select" className="block text-xs font-semibold theme-text-heading mb-1">Account Role</label>
                   <select
+                    id="reg-role-select"
+                    name="accountRole"
+                    aria-label="Account Role"
                     value={regRole}
                     onChange={(e) => setRegRole(e.target.value as UserRole)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none cursor-pointer font-medium"

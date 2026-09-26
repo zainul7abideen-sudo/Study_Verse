@@ -1,0 +1,18 @@
+{
+  "name": "StudyVerse — Campus Book Resale, Lowest Price Search & CGPA Engine",
+  "short_name": "StudyVerse",
+  "description": "Compare lowest book prices across Amazon & Flipkart, buy & resell pre-loved college textbooks, calculate university CGPA, and track attendance with AI.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

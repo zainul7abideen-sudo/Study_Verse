@@ -302,6 +302,9 @@ export const AdminCommandCenter: React.FC = () => {
 
                       <td className="py-3 px-4">
                         <select
+                          id={`user-role-select-${u.id}`}
+                          name={`user-role-${u.id}`}
+                          aria-label={`Change role for ${u.name}`}
                           value={u.role}
                           onChange={(e) => updateUserRole(u.id, e.target.value as UserRole)}
                           className="theme-input border theme-border text-xs font-bold rounded-lg px-2 py-1 text-blue-500 dark:text-cyan-300 outline-none cursor-pointer"
@@ -405,6 +408,9 @@ export const AdminCommandCenter: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="text-xs theme-text-muted">Immutable timestamped logs of all administrative & worker operations</div>
             <select
+              id="admin-audit-filter-select"
+              name="auditFilter"
+              aria-label="Filter audit logs by event type"
               value={auditFilter}
               onChange={(e) => setAuditFilter(e.target.value)}
               className="theme-input theme-text-heading text-xs border theme-border rounded-lg px-3 py-1.5 outline-none cursor-pointer"
@@ -479,8 +485,11 @@ export const AdminCommandCenter: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Role / Authority</label>
+                  <label htmlFor="admin-new-user-role-select" className="block text-xs font-semibold theme-text-heading mb-1">Role / Authority</label>
                   <select
+                    id="admin-new-user-role-select"
+                    name="newUserRole"
+                    aria-label="New User Role"
                     value={newUserRole}
                     onChange={(e) => setNewUserRole(e.target.value as UserRole)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none"
@@ -493,8 +502,11 @@ export const AdminCommandCenter: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">University</label>
+                  <label htmlFor="admin-new-user-university-select" className="block text-xs font-semibold theme-text-heading mb-1">University</label>
                   <select
+                    id="admin-new-user-university-select"
+                    name="newUserUniversity"
+                    aria-label="New User University"
                     value={newUserUniversity}
                     onChange={(e) => setNewUserUniversity(e.target.value)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none"

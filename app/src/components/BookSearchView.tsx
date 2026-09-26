@@ -342,8 +342,11 @@ export const BookSearchView: React.FC<BookSearchViewProps> = ({ setActiveTab = (
         {/* Sort Selector */}
         <div className="flex items-center gap-2 flex-shrink-0 text-xs theme-text-muted">
           <ArrowUpDown className="w-3.5 h-3.5 text-blue-500" />
-          <span>Sort by:</span>
+          <label htmlFor="book-sort-by" className="font-semibold theme-text-muted">Sort by:</label>
           <select
+            id="book-sort-by"
+            name="sortBy"
+            aria-label="Sort books by"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as any)}
             className="theme-card-sub theme-text-heading border theme-border rounded-xl px-2.5 py-1.5 text-xs outline-none cursor-pointer font-semibold"
@@ -353,7 +356,6 @@ export const BookSearchView: React.FC<BookSearchViewProps> = ({ setActiveTab = (
             <option value="highest_savings">Highest Savings (₹ / %)</option>
             <option value="rating">Top Rated (★)</option>
           </select>
-
         </div>
       </div>
 

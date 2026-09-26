@@ -157,10 +157,13 @@ export const AcademicCalculatorsView: React.FC = () => {
 
         {/* University Selector Dropdown */}
         <div className="w-full md:w-auto theme-card-sub border theme-border rounded-2xl p-3 shadow-lg flex-shrink-0">
-          <label className="block text-[10px] uppercase font-bold text-amber-500 mb-1">
+          <label htmlFor="university-scheme-select" className="block text-[10px] uppercase font-bold text-amber-500 mb-1">
             Selected University Scheme:
           </label>
           <select
+            id="university-scheme-select"
+            name="universityScheme"
+            aria-label="Selected University Scheme"
             value={selectedUnivCode}
             onChange={(e) => handleUniversityChange(e.target.value)}
             className="w-full theme-input theme-text-heading font-bold text-xs sm:text-sm rounded-xl px-3 py-2 border theme-border focus:ring-2 focus:ring-amber-500 outline-none cursor-pointer"
@@ -223,8 +226,11 @@ export const AcademicCalculatorsView: React.FC = () => {
           {/* Metadata Controls */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 theme-card border theme-border rounded-2xl p-4">
             <div>
-              <label className="block text-xs font-semibold theme-text-muted mb-1">Academic Semester</label>
+              <label htmlFor="academic-semester-select" className="block text-xs font-semibold theme-text-muted mb-1">Academic Semester</label>
               <select
+                id="academic-semester-select"
+                name="academicSemester"
+                aria-label="Academic Semester"
                 value={semesterNumber}
                 onChange={(e) => setSemesterNumber(parseInt(e.target.value))}
                 className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none"
@@ -316,6 +322,9 @@ export const AcademicCalculatorsView: React.FC = () => {
 
                       <td className="py-2.5 px-4">
                         <select
+                          id={`subject-grade-${sub.id}`}
+                          name={`subjectGrade_${sub.id}`}
+                          aria-label={`Obtained Grade for ${sub.name || sub.code || 'Course'}`}
                           value={sub.grade}
                           onChange={(e) => handleGradeChange(sub.id, e.target.value)}
                           className="theme-input border theme-border text-xs font-bold text-emerald-600 dark:text-emerald-400 rounded px-2 py-1 outline-none cursor-pointer"
@@ -489,8 +498,11 @@ export const AcademicCalculatorsView: React.FC = () => {
             </div>
 
             <div className="theme-card-sub border theme-border rounded-2xl p-4 space-y-2">
-              <label className="block text-xs font-semibold theme-text-heading">Desired Target Grade</label>
+              <label htmlFor="target-grade-select" className="block text-xs font-semibold theme-text-heading">Desired Target Grade</label>
               <select
+                id="target-grade-select"
+                name="targetGrade"
+                aria-label="Desired Target Grade"
                 value={targetGradePoint}
                 onChange={(e) => setTargetGradePoint(parseInt(e.target.value))}
                 className="w-full theme-input border theme-border rounded-xl px-3 py-2 text-sm font-bold text-amber-500 outline-none cursor-pointer"

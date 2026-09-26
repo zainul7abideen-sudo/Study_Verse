@@ -170,8 +170,11 @@ export const ResellExchangeView: React.FC = () => {
 
         {activeTab === 'browse' && (
           <div className="flex items-center gap-2 text-xs">
-            <span className="theme-text-muted hidden sm:inline">Condition:</span>
+            <label htmlFor="filter-condition-select" className="theme-text-muted hidden sm:inline font-semibold">Condition:</label>
             <select
+              id="filter-condition-select"
+              name="filterCondition"
+              aria-label="Filter books by condition"
               value={filterCondition}
               onChange={(e) => setFilterCondition(e.target.value)}
               className="theme-input theme-text-heading border theme-border rounded-lg px-2.5 py-1 outline-none text-xs cursor-pointer"
@@ -489,8 +492,11 @@ export const ResellExchangeView: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Category</label>
+                  <label htmlFor="listing-category-select" className="block text-xs font-semibold theme-text-heading mb-1">Category</label>
                   <select
+                    id="listing-category-select"
+                    name="category"
+                    aria-label="Book Category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value as BookCategory)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -505,8 +511,11 @@ export const ResellExchangeView: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold theme-text-heading mb-1">Condition</label>
+                  <label htmlFor="listing-condition-select" className="block text-xs font-semibold theme-text-heading mb-1">Condition</label>
                   <select
+                    id="listing-condition-select"
+                    name="condition"
+                    aria-label="Book Condition"
                     value={condition}
                     onChange={(e) => setCondition(e.target.value as BookCondition)}
                     className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -623,7 +632,7 @@ export const ResellExchangeView: React.FC = () => {
             <form onSubmit={handleProposeTradeSubmit} className="space-y-4 text-left">
               
               <div>
-                <label className="block text-xs font-semibold theme-text-heading mb-1">
+                <label htmlFor="trade-book-offer-select" className="block text-xs font-semibold theme-text-heading mb-1">
                   Select your book to offer in exchange: *
                 </label>
                 {myListedBooks.length === 0 ? (
@@ -632,6 +641,9 @@ export const ResellExchangeView: React.FC = () => {
                   </div>
                 ) : (
                   <select
+                    id="trade-book-offer-select"
+                    name="offeredBook"
+                    aria-label="Select your book to offer in exchange"
                     required
                     value={selectedMyBookForTrade}
                     onChange={(e) => setSelectedMyBookForTrade(e.target.value)}

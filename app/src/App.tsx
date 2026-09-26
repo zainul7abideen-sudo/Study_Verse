@@ -15,6 +15,7 @@ import { UserProfileView } from './components/UserProfileView';
 import { AdminCommandCenter } from './components/AdminCommandCenter';
 import { ToastContainer } from './components/ToastContainer';
 import { AIAssistantWidget } from './components/AIAssistantWidget';
+import { TrustLegalModals, LegalModalTab } from './components/TrustLegalModals';
 import { BookOpen, ShieldCheck, Heart, Sparkles, MapPin, ExternalLink, ArrowUpRight, Palette } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
@@ -28,6 +29,7 @@ const MainLayout: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isAIAssistantOpen, setIsAIAssistantOpen] = useState(false);
+  const [legalModalTab, setLegalModalTab] = useState<LegalModalTab | null>(null);
 
   // MAINTENANCE MODE GUARD:
   if (maintenanceState.isMaintenanceMode && !isBypassed && currentUser.role !== 'admin') {
@@ -75,6 +77,7 @@ const MainLayout: React.FC = () => {
         openCart={() => setIsCartOpen(true)}
         openAuthModal={openAuthModal}
         openAIAssistant={() => setIsAIAssistantOpen(true)}
+        openLegalModal={(tab) => setLegalModalTab(tab)}
       />
 
       {/* Unified Auth Modal (Login, Register, Forgot Password & Admin Login) */}
@@ -107,6 +110,13 @@ const MainLayout: React.FC = () => {
         setActiveTab={setActiveTab}
       />
 
+      {/* Trust, Legal & Student Support Modals */}
+      <TrustLegalModals
+        isOpen={legalModalTab !== null}
+        onClose={() => setLegalModalTab(null)}
+        initialTab={legalModalTab || 'privacy'}
+      />
+
       {/* Floating System Toast Alerts */}
       <ToastContainer />
 
@@ -127,6 +137,13 @@ const MainLayout: React.FC = () => {
               <p className="theme-text-muted text-xs leading-relaxed">
                 Empowering college students across India with peer-to-peer textbook resale, automated lowest-price book ordering, digital e-books, and university CGPA engines.
               </p>
+              <div className="flex items-center gap-3 pt-1">
+                <button onClick={() => setLegalModalTab('privacy')} className="text-blue-500 hover:underline">Privacy Policy</button>
+                <span>•</span>
+                <button onClick={() => setLegalModalTab('terms')} className="text-blue-500 hover:underline">Terms of Service</button>
+                <span>•</span>
+                <button onClick={() => setLegalModalTab('contact')} className="text-emerald-500 hover:underline">Help & Support</button>
+              </div>
             </div>
 
             {/* Col 2 */}
@@ -157,8 +174,8 @@ const MainLayout: React.FC = () => {
               <h4 className="font-bold theme-text-heading text-xs uppercase tracking-wider mb-3">Governance & Access</h4>
               <ul className="space-y-2">
                 <li><button onClick={openAuthModal} className="text-blue-500 font-semibold hover:underline">Student / Admin Sign In</button></li>
-                <li><span>Automated Dropship Worker: Active</span></li>
-                <li><span>Real-time Google Books Sync: Active</span></li>
+                <li><button onClick={() => setLegalModalTab('contact')} className="hover:text-emerald-500 transition-colors">Student Helpdesk (24/7 SLA)</button></li>
+                <li><button onClick={() => setLegalModalTab('privacy')} className="hover:text-blue-500 transition-colors">DPDP 2023 Compliance</button></li>
                 <li>
                   <button 
                     onClick={() => {
@@ -176,8 +193,11 @@ const MainLayout: React.FC = () => {
           </div>
 
           <div className="pt-6 border-t theme-border flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] theme-text-muted">
-            <div>
-              © 2026 Study Student Shop (SSS). All rights reserved. Built for engineering & degree students across India.
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <span>© 2026 Study Student Shop (SSS). All rights reserved. Built for engineering & degree students across India.</span>
+              <button onClick={() => setLegalModalTab('privacy')} className="hover:underline">Privacy</button>
+              <button onClick={() => setLegalModalTab('terms')} className="hover:underline">Terms</button>
+              <button onClick={() => setLegalModalTab('contact')} className="hover:underline">Support</button>
             </div>
             <div className="flex items-center gap-1">
               <span>Crafted for student success</span>

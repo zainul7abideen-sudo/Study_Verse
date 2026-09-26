@@ -884,8 +884,11 @@ export const UserProfileView: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">University / Examination Board</label>
+                <label htmlFor="profile-university-select" className="text-xs font-semibold theme-text-muted">University / Examination Board</label>
                 <select
+                  id="profile-university-select"
+                  name="university"
+                  aria-label="University or Examination Board"
                   value={formData.university}
                   onChange={(e) => setFormData({ ...formData, university: e.target.value })}
                   className="w-full p-3 text-xs rounded-xl theme-input border theme-border focus:ring-2 focus:ring-blue-500 focus:outline-none font-semibold"
@@ -897,8 +900,10 @@ export const UserProfileView: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">College / Campus Name</label>
+                <label htmlFor="profile-college-input" className="text-xs font-semibold theme-text-muted">College / Campus Name</label>
                 <input
+                  id="profile-college-input"
+                  name="collegeName"
                   type="text"
                   value={formData.collegeName}
                   onChange={(e) => setFormData({ ...formData, collegeName: e.target.value })}
@@ -908,8 +913,10 @@ export const UserProfileView: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">Campus City / State</label>
+                <label htmlFor="profile-location-input" className="text-xs font-semibold theme-text-muted">Campus City / State</label>
                 <input
+                  id="profile-location-input"
+                  name="campusLocation"
                   type="text"
                   value={formData.campusLocation}
                   onChange={(e) => setFormData({ ...formData, campusLocation: e.target.value })}
@@ -921,8 +928,11 @@ export const UserProfileView: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">Degree Program</label>
+                <label htmlFor="profile-degree-select" className="text-xs font-semibold theme-text-muted">Degree Program</label>
                 <select
+                  id="profile-degree-select"
+                  name="degree"
+                  aria-label="Degree Program"
                   value={formData.degree}
                   onChange={(e) => setFormData({ ...formData, degree: e.target.value })}
                   className="w-full p-3 text-xs rounded-xl theme-input border theme-border focus:ring-2 focus:ring-blue-500 focus:outline-none font-semibold"
@@ -938,8 +948,10 @@ export const UserProfileView: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">Branch / Specialization</label>
+                <label htmlFor="profile-branch-input" className="text-xs font-semibold theme-text-muted">Branch / Specialization</label>
                 <input
+                  id="profile-branch-input"
+                  name="branch"
                   type="text"
                   value={formData.branch}
                   onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
@@ -949,8 +961,11 @@ export const UserProfileView: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">Academic Class / Year</label>
+                <label htmlFor="profile-academic-year-select" className="text-xs font-semibold theme-text-muted">Academic Class / Year</label>
                 <select
+                  id="profile-academic-year-select"
+                  name="academicYear"
+                  aria-label="Academic Class or Year"
                   value={formData.academicYear}
                   onChange={(e) => setFormData({ ...formData, academicYear: e.target.value })}
                   className="w-full p-3 text-xs rounded-xl theme-input border theme-border focus:ring-2 focus:ring-blue-500 focus:outline-none font-semibold"
@@ -964,8 +979,11 @@ export const UserProfileView: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">Current Semester</label>
+                <label htmlFor="profile-semester-select" className="text-xs font-semibold theme-text-muted">Current Semester</label>
                 <select
+                  id="profile-semester-select"
+                  name="semester"
+                  aria-label="Current Semester"
                   value={formData.semester}
                   onChange={(e) => setFormData({ ...formData, semester: e.target.value })}
                   className="w-full p-3 text-xs rounded-xl theme-input border theme-border focus:ring-2 focus:ring-blue-500 focus:outline-none font-bold"
@@ -979,8 +997,10 @@ export const UserProfileView: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">Student Roll Number / USN</label>
+                <label htmlFor="profile-roll-number-input" className="text-xs font-semibold theme-text-muted">Student Roll Number / USN</label>
                 <input
+                  id="profile-roll-number-input"
+                  name="rollNumber"
                   type="text"
                   value={formData.rollNumber}
                   onChange={(e) => setFormData({ ...formData, rollNumber: e.target.value })}
@@ -990,8 +1010,10 @@ export const UserProfileView: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">Target Exam / Goal</label>
+                <label htmlFor="profile-target-exams-input" className="text-xs font-semibold theme-text-muted">Target Exam / Goal</label>
                 <input
+                  id="profile-target-exams-input"
+                  name="targetExams"
                   type="text"
                   value={formData.targetExams}
                   onChange={(e) => setFormData({ ...formData, targetExams: e.target.value })}
@@ -1001,8 +1023,11 @@ export const UserProfileView: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold theme-text-muted">Preferred Study Language</label>
+                <label htmlFor="profile-preferred-language-select" className="text-xs font-semibold theme-text-muted">Preferred Study Language</label>
                 <select
+                  id="profile-preferred-language-select"
+                  name="preferredLanguage"
+                  aria-label="Preferred Study Language"
                   value={formData.preferredLanguage}
                   onChange={(e) => setFormData({ ...formData, preferredLanguage: e.target.value })}
                   className="w-full p-3 text-xs rounded-xl theme-input border theme-border focus:ring-2 focus:ring-blue-500 focus:outline-none"
@@ -1679,8 +1704,11 @@ export const UserProfileView: React.FC = () => {
 
               {/* Payment Method */}
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider theme-text-muted block">Payment Method</label>
+                <label htmlFor="wallet-topup-method-select" className="text-xs font-bold uppercase tracking-wider theme-text-muted block">Payment Method</label>
                 <select
+                  id="wallet-topup-method-select"
+                  name="topUpMethod"
+                  aria-label="Payment Method for Wallet Top-up"
                   value={topUpMethod}
                   onChange={(e) => setTopUpMethod(e.target.value)}
                   className="w-full p-3 rounded-xl theme-input border theme-border text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -1902,11 +1930,14 @@ export const UserProfileView: React.FC = () => {
             </div>
 
             <div className="space-y-3">
-              <label className="text-xs font-bold theme-text-muted uppercase tracking-wider block">
+              <label htmlFor="cancel-order-reason-select" className="text-xs font-bold theme-text-muted uppercase tracking-wider block">
                 Reason for Cancellation:
               </label>
 
               <select
+                id="cancel-order-reason-select"
+                name="cancelReason"
+                aria-label="Reason for Order Cancellation"
                 value={cancelReason}
                 onChange={(e) => setCancelReason(e.target.value)}
                 className="w-full p-3 rounded-xl theme-input border theme-border text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500"

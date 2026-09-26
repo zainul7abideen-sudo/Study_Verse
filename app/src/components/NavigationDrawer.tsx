@@ -16,10 +16,11 @@ interface NavigationDrawerProps {
   openCart: () => void;
   openAuthModal: () => void;
   openAIAssistant?: () => void;
+  openLegalModal?: (tab: 'privacy' | 'terms' | 'contact') => void;
 }
 
 export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
-  isOpen, onClose, activeTab, setActiveTab, openCart, openAuthModal, openAIAssistant = () => {}
+  isOpen, onClose, activeTab, setActiveTab, openCart, openAuthModal, openAIAssistant = () => {}, openLegalModal = () => {}
 }) => {
   const { 
     currentUser, switchUser, logoutUser, cart, 
@@ -380,6 +381,43 @@ export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
                 {theme === 'dark' && (
                   <CheckCircle2 className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 )}
+              </button>
+            </div>
+          </div>
+
+          {/* Trust, Legal & Student Support Links */}
+          <div className="space-y-1.5 pt-2 border-t theme-border">
+            <div className="text-[10px] uppercase font-bold theme-text-muted px-2 tracking-wider">
+              Trust & Governance
+            </div>
+            
+            <div className="grid grid-cols-3 gap-1.5 px-1">
+              <button
+                onClick={() => {
+                  onClose();
+                  openLegalModal('privacy');
+                }}
+                className="p-2 rounded-xl theme-card-sub border theme-border text-[11px] font-semibold text-center hover:text-blue-500 transition-colors cursor-pointer"
+              >
+                Privacy
+              </button>
+              <button
+                onClick={() => {
+                  onClose();
+                  openLegalModal('terms');
+                }}
+                className="p-2 rounded-xl theme-card-sub border theme-border text-[11px] font-semibold text-center hover:text-blue-500 transition-colors cursor-pointer"
+              >
+                Terms
+              </button>
+              <button
+                onClick={() => {
+                  onClose();
+                  openLegalModal('contact');
+                }}
+                className="p-2 rounded-xl theme-card-sub border theme-border text-[11px] font-semibold text-center hover:text-emerald-500 transition-colors cursor-pointer"
+              >
+                Help Desk
               </button>
             </div>
           </div>

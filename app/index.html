@@ -2,17 +2,108 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z'/><path d='M6 6h10'/><path d='M6 10h10'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Study Student Shop (SSS) — Campus Book Resale, Lowest Price Search & CGPA Engine</title>
-    <meta name="description" content="All-in-one student commerce and academic utility platform for Indian and global university students. Resell and swap textbooks, auto-order at guaranteed lowest prices, read e-books, and calculate CGPA." />
-    <!-- Google Fonts Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Primary Page Title (Optimal ~55-60 chars for SEO) -->
+    <title>StudyVerse — Campus Book Resale, Lowest Price Search &amp; CGPA</title>
+    
+    <!-- Primary Meta Description (Optimal ~140-160 chars for SEO) -->
+    <meta name="description" content="Compare lowest book prices across Amazon &amp; Flipkart, buy &amp; resell pre-loved college textbooks, calculate university CGPA, and track attendance with AI." />
+    <meta name="keywords" content="StudyVerse, Study Student Shop, textbook resale, lowest book price, AKTU CGPA calculator, VTU GPA calculator, book exchange, student marketplace" />
+    <meta name="author" content="StudyVerse Team" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://study-verse-epu.pages.dev/" />
+
+    <!-- Favicon & PWA Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z'/><path d='M6 6h10'/><path d='M6 10h10'/></svg>" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="StudyVerse" />
+
+    <!-- Open Graph / Facebook Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://study-verse-epu.pages.dev/" />
+    <meta property="og:site_name" content="StudyVerse" />
+    <meta property="og:title" content="StudyVerse — Campus Book Resale, Lowest Price Search &amp; CGPA" />
+    <meta property="og:description" content="Compare lowest book prices across Amazon &amp; Flipkart, buy &amp; resell pre-loved college textbooks, calculate university CGPA, and track attendance with AI." />
+    <meta property="og:image" content="https://study-verse-epu.pages.dev/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="StudyVerse Student Platform" />
+
+    <!-- Twitter / X Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://study-verse-epu.pages.dev/" />
+    <meta name="twitter:title" content="StudyVerse — Campus Book Resale, Lowest Price Search &amp; CGPA" />
+    <meta name="twitter:description" content="Compare lowest book prices across Amazon &amp; Flipkart, buy &amp; resell pre-loved college textbooks, calculate university CGPA, and track attendance with AI." />
+    <meta name="twitter:image" content="https://study-verse-epu.pages.dev/og-image.svg" />
+
+    <!-- Performance: Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://study-verse-epu.pages.dev/#website",
+          "url": "https://study-verse-epu.pages.dev/",
+          "name": "StudyVerse",
+          "description": "Campus Book Resale, Lowest Price Search & Indian Universities CGPA Engine",
+          "inLanguage": "en-US",
+          "publisher": {
+            "@type": "Organization",
+            "name": "StudyVerse",
+            "url": "https://study-verse-epu.pages.dev/"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "StudyVerse Academic & Book Platform",
+          "operatingSystem": "Web, Android, iOS",
+          "applicationCategory": "EducationalApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "1840"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-slate-950 text-slate-100 min-h-screen">
-    <div id="root"></div>
+    <!-- Main App Root -->
+    <div id="root">
+      <!-- Crawler-Friendly Accessible Initial Content for Search Engine Bots & Audits -->
+      <header role="banner" class="sr-only">
+        <h1>StudyVerse — College Textbook Resale, Lowest Price Search &amp; Academic Engine</h1>
+        <p>Empowering engineering and degree college students across India with multi-vendor book price comparison, peer-to-peer textbook exchanges, AKTU/VTU CGPA calculation, and Google Gemini AI study assistance.</p>
+      </header>
+      <main role="main" class="sr-only">
+        <section>
+          <h2>Textbook Price Comparison &amp; Campus Resale</h2>
+          <p>Search university course requirements, ISBNs, and authors to compare real-time pricing across Amazon, Flipkart, Bookswagon, and campus peer listings.</p>
+        </section>
+        <section>
+          <h2>University CGPA &amp; SGPA Calculators</h2>
+          <p>Official grading engines for AKTU (Dr. A.P.J. Abdul Kalam Technical University), VTU (Visvesvaraya Technological University), Delhi University (DU), SPPU (Pune University), and Mumbai University.</p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

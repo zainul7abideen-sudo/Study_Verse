@@ -974,8 +974,11 @@ export const StudyHubView: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold theme-text-heading mb-1">Priority</label>
+                      <label htmlFor="assignment-priority-select" className="block text-xs font-semibold theme-text-heading mb-1">Priority</label>
                       <select
+                        id="assignment-priority-select"
+                        name="priority"
+                        aria-label="Assignment Priority"
                         value={newAsgPriority}
                         onChange={(e) => setNewAsgPriority(e.target.value)}
                         className="w-full theme-input theme-text-heading border theme-border rounded-xl px-3 py-2 text-xs outline-none"
