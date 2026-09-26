@@ -67,25 +67,23 @@ export const AdminCommandCenter: React.FC = () => {
   const totalRevenue = orders.reduce((acc, o) => acc + o.totalAmount, 0);
   const totalSaved = orders.reduce((acc, o) => acc + o.totalSaved, 0);
 
-  return (
-    <div className="space-y-8 pb-16">
-      
-      {/* Student to Admin 1-Click Switch Banner if not admin */}
-      {currentUser.role !== 'admin' && (
-        <div className="p-4 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs shadow-md">
-          <div className="flex items-center gap-2.5 text-amber-600 dark:text-amber-300 font-bold">
-            <ShieldAlert className="w-5 h-5 flex-shrink-0" />
-            <span>You are viewing in Student Preview ({currentUser.name}). Switch to full System Admin to test all live maintenance & user controls.</span>
-          </div>
-          <button
-            onClick={() => switchUser('usr-admin')}
-            className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-black rounded-xl text-xs shadow-md transition-all cursor-pointer whitespace-nowrap"
-          >
-            ⚡ Switch to System Admin Account
-          </button>
+  // STRICT ACCESS CONTROL GUARD:
+  if (currentUser.role !== 'admin') {
+    return (
+      <div className="max-w-lg mx-auto py-20 text-center space-y-4 animate-fade-in">
+        <div className="w-16 h-16 rounded-3xl bg-rose-500/20 text-rose-500 border border-rose-500/30 flex items-center justify-center mx-auto shadow-lg">
+          <ShieldAlert className="w-8 h-8" />
         </div>
-      )}
+        <h2 className="text-xl font-bold theme-text-heading">Admin Authorization Required</h2>
+        <p className="text-xs theme-text-muted leading-relaxed max-w-sm mx-auto">
+          The Admin Command Center is strictly restricted to authorized system administrators. Please sign in with administrator credentials to access these governance features.
+        </p>
+      </div>
+    );
+  }
 
+  return (
+    <div className="space-y-8 pb-16 animate-fade-in">
       {/* Admin Header */}
       <div className="theme-card border theme-border rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
         <div className="space-y-2 text-center md:text-left">

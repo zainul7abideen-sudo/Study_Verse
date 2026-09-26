@@ -137,7 +137,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   });
 
   const [currentUserId, setCurrentUserId] = useState<string>(() => {
-    return localStorage.getItem('sss_current_user_id') || 'usr-admin';
+    return localStorage.getItem('sss_current_user_id') || 'usr-student-1';
   });
 
   const [maintenanceState, setMaintenanceState] = useState<MaintenanceState>(() => {

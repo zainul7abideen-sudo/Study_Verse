@@ -65,7 +65,27 @@ const MainLayout: React.FC = () => {
         {activeTab === 'ebooks' && <EbookStoreView />}
         {activeTab === 'academic' && <AcademicCalculatorsView />}
         {activeTab === 'profile' && <UserProfileView />}
-        {activeTab === 'admin' && <AdminCommandCenter />}
+        {activeTab === 'admin' && (
+          currentUser.role === 'admin' ? (
+            <AdminCommandCenter />
+          ) : (
+            <div className="max-w-md mx-auto py-20 text-center space-y-4 animate-fade-in">
+              <div className="w-16 h-16 rounded-3xl bg-rose-500/20 text-rose-500 border border-rose-500/30 flex items-center justify-center mx-auto shadow-lg">
+                <ShieldCheck className="w-8 h-8" />
+              </div>
+              <h2 className="text-xl font-bold theme-text-heading">Admin Authorization Required</h2>
+              <p className="text-xs theme-text-muted leading-relaxed">
+                The Admin Console is strictly restricted to system administrators. Please sign in with your administrative credentials to access this section.
+              </p>
+              <button
+                onClick={openAuthModal}
+                className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-blue-600/25 transition-all cursor-pointer"
+              >
+                Sign In with Admin Account
+              </button>
+            </div>
+          )
+        )}
       </main>
 
       {/* 3-Line Hamburger Navigation Drawer */}

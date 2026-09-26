@@ -164,8 +164,8 @@ export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
               <ChevronRight className="w-4 h-4 opacity-60" />
             </button>
 
-            {/* Admin Command Center Link */}
-            {currentUser.role === 'admin' ? (
+            {/* Admin Command Center Link: Strictly visible only when logged in as Admin */}
+            {currentUser.role === 'admin' && (
               <button
                 onClick={() => handleNavClick('admin')}
                 className={`w-full p-3 rounded-2xl flex items-center justify-between text-left transition-all cursor-pointer ${
@@ -181,25 +181,6 @@ export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
                   <div>
                     <div className="text-xs font-bold">Admin Command Center (Active)</div>
                     <div className="text-[10px] opacity-75">Maintenance Mode, RBAC Users & Audit Logs</div>
-                  </div>
-                </div>
-                <ChevronRight className="w-4 h-4 opacity-60" />
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  switchUser('usr-admin');
-                  handleNavClick('admin');
-                }}
-                className="w-full p-3 rounded-2xl flex items-center justify-between text-left transition-all bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-600 dark:text-amber-400 cursor-pointer"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/20 text-amber-500">
-                    <Zap className="w-4 h-4 text-amber-500" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold">⚡ Switch to Admin (1-Click Demo)</div>
-                    <div className="text-[10px] opacity-80">Test Admin maintenance hold, users & dropship logs</div>
                   </div>
                 </div>
                 <ChevronRight className="w-4 h-4 opacity-60" />
