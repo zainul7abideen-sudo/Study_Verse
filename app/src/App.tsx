@@ -14,6 +14,7 @@ import { CartAndCheckoutModal } from './components/CartAndCheckoutModal';
 import { UserProfileView } from './components/UserProfileView';
 import { AdminCommandCenter } from './components/AdminCommandCenter';
 import { ToastContainer } from './components/ToastContainer';
+import { AIAssistantWidget } from './components/AIAssistantWidget';
 import { BookOpen, ShieldCheck, Heart, Sparkles, MapPin, ExternalLink, ArrowUpRight, Palette } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
@@ -26,6 +27,7 @@ const MainLayout: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('search');
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isAIAssistantOpen, setIsAIAssistantOpen] = useState(false);
 
   // MAINTENANCE MODE GUARD:
   if (maintenanceState.isMaintenanceMode && !isBypassed && currentUser.role !== 'admin') {
@@ -50,6 +52,7 @@ const MainLayout: React.FC = () => {
         setActiveTab={setActiveTab} 
         openCart={() => setIsCartOpen(true)} 
         openMenuDrawer={() => setIsDrawerOpen(true)}
+        openAIAssistant={() => setIsAIAssistantOpen(true)}
       />
 
       {/* Main App Body */}
@@ -71,6 +74,7 @@ const MainLayout: React.FC = () => {
         setActiveTab={setActiveTab}
         openCart={() => setIsCartOpen(true)}
         openAuthModal={openAuthModal}
+        openAIAssistant={() => setIsAIAssistantOpen(true)}
       />
 
       {/* Unified Auth Modal (Login, Register, Forgot Password & Admin Login) */}
@@ -95,6 +99,13 @@ const MainLayout: React.FC = () => {
           onClose={closeEbookReader}
         />
       )}
+
+      {/* StudyVerse AI Academic & Campus Assistant Floating Widget */}
+      <AIAssistantWidget
+        isOpen={isAIAssistantOpen}
+        onClose={() => setIsAIAssistantOpen(false)}
+        setActiveTab={setActiveTab}
+      />
 
       {/* Floating System Toast Alerts */}
       <ToastContainer />

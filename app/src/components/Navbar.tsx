@@ -13,10 +13,11 @@ interface NavbarProps {
   setActiveTab: (tab: ActiveTab) => void;
   openCart: () => void;
   openMenuDrawer: () => void;
+  openAIAssistant?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
-  activeTab, setActiveTab, openCart, openMenuDrawer 
+  activeTab, setActiveTab, openCart, openMenuDrawer, openAIAssistant = () => {} 
 }) => {
   const { 
     currentUser, switchUser, logoutUser, cart, maintenanceState, 
@@ -61,9 +62,20 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Right Action Bar: Light/Dark Switcher, Admin Button, User Profile, Cart & Logout */}
+          {/* Right Action Bar: AI Assistant, Light/Dark Switcher, Admin Button, User Profile, Cart & Logout */}
           <div className="flex items-center gap-2 sm:gap-3">
             
+            {/* AI Assistant Quick Trigger Button */}
+            <button
+              onClick={openAIAssistant}
+              className="px-3 py-2 rounded-xl bg-gradient-to-r from-purple-600/15 to-blue-600/15 hover:from-purple-600/25 hover:to-blue-600/25 text-purple-600 dark:text-purple-300 border border-purple-500/30 active:scale-95 transition-all flex items-center gap-1.5 text-xs font-bold cursor-pointer shadow-sm"
+              title="Open StudyVerse AI Assistant"
+            >
+              <Zap className="w-3.5 h-3.5 text-amber-400 fill-current" />
+              <span className="hidden sm:inline">AI Assistant</span>
+              <span className="sm:hidden">AI</span>
+            </button>
+
             {/* Minimal SaaS Light / Dark Mode Toggle Button */}
             <button
               onClick={toggleLightDark}

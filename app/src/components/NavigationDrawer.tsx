@@ -15,10 +15,11 @@ interface NavigationDrawerProps {
   setActiveTab: (tab: ActiveTab) => void;
   openCart: () => void;
   openAuthModal: () => void;
+  openAIAssistant?: () => void;
 }
 
 export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
-  isOpen, onClose, activeTab, setActiveTab, openCart, openAuthModal
+  isOpen, onClose, activeTab, setActiveTab, openCart, openAuthModal, openAIAssistant = () => {}
 }) => {
   const { 
     currentUser, switchUser, logoutUser, cart, 
@@ -203,6 +204,31 @@ export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
                 <ChevronRight className="w-4 h-4 opacity-60" />
               </button>
             )}
+
+            {/* StudyVerse AI Copilot & Guidance Button */}
+            <button
+              onClick={() => {
+                onClose();
+                openAIAssistant();
+              }}
+              className="w-full p-3 rounded-2xl flex items-center justify-between text-left transition-all bg-gradient-to-r from-purple-500/15 via-indigo-500/10 to-blue-500/15 hover:from-purple-500/25 hover:to-blue-500/25 border border-purple-500/30 text-purple-600 dark:text-purple-300 cursor-pointer shadow-sm"
+            >
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-xl bg-purple-500/25 text-purple-600 dark:text-purple-300">
+                  <Brain className="w-4 h-4 text-purple-500 animate-pulse" />
+                </div>
+                <div>
+                  <div className="text-xs font-black flex items-center gap-1.5">
+                    <span>StudyVerse AI Assistant</span>
+                    <span className="px-1.5 py-0.2 rounded-full bg-purple-500/20 text-[9px] uppercase font-bold">
+                      Gemini
+                    </span>
+                  </div>
+                  <div className="text-[10px] opacity-85">Instant concept answers, study guidance & book lookup</div>
+                </div>
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-75" />
+            </button>
 
             <button
               onClick={() => handleNavClick('search')}
