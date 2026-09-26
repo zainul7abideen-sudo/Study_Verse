@@ -1,0 +1,438 @@
+import { User, Book, ExchangeProposal, Order, AuditLog, MaintenanceState, AcademicRecord, WalletTransaction } from '../types';
+
+export const INITIAL_USERS: User[] = [
+  {
+    id: 'usr-admin',
+    name: 'Ekbal (System Admin)',
+    email: 'admin@sss.edu',
+    role: 'admin',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    university: 'AKTU',
+    collegeName: 'Institute of Engineering and Technology (IET)',
+    campusLocation: 'Lucknow, UP',
+    degree: 'B.Tech / B.E',
+    branch: 'Computer Science & Engineering',
+    academicYear: '3rd Year',
+    semester: 'Semester 5',
+    rollNumber: '2200520100088',
+    bio: 'Tech enthusiast, full-stack engineer, and campus book club lead. Specializing in Systems & AI algorithms.',
+    targetExams: 'GATE CSE 2027 & Placement Drives',
+    defaultShippingAddress: 'Aryabhatta Hostel, Block B, Room 304, IET Lucknow Campus',
+    hostelRoom: 'Aryabhatta Hall - Room 304',
+    emergencyContact: '+91 98765 00000',
+    preferredLanguage: 'English',
+    isBanned: false,
+    walletBalance: 2450,
+    phone: '+91 98765 43210',
+    isEmailVerified: true,
+    createdAt: '2026-08-01T10:00:00Z'
+  },
+  {
+    id: 'usr-student-1',
+    name: 'Aarav Sharma',
+    email: 'aarav.sharma@vtu.ac.in',
+    role: 'student',
+    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80',
+    university: 'VTU',
+    collegeName: 'BMS College of Engineering',
+    campusLocation: 'Bangalore, Karnataka',
+    degree: 'B.Tech / B.E',
+    branch: 'Information Science & Engineering',
+    academicYear: '2nd Year',
+    semester: 'Semester 3',
+    rollNumber: '1BM22IS045',
+    bio: 'ISE Undergrad passionate about Data Structures, Web3, and Algorithms. Frequent book trader.',
+    targetExams: 'Campus Placements & Open Source',
+    defaultShippingAddress: 'Sir MV Hostel, Room 112, BMSCE Bull Temple Road, Bangalore',
+    hostelRoom: 'Sir MV Hall - 112',
+    emergencyContact: '+91 98111 99999',
+    preferredLanguage: 'English',
+    isBanned: false,
+    walletBalance: 820,
+    phone: '+91 98111 22334',
+    isEmailVerified: true,
+    createdAt: '2026-08-15T12:00:00Z'
+  },
+  {
+    id: 'usr-student-2',
+    name: 'Ananya Verma',
+    email: 'ananya.v@du.ac.in',
+    role: 'verified_seller',
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80',
+    university: 'DU',
+    collegeName: 'Hansraj College, North Campus',
+    campusLocation: 'New Delhi',
+    degree: 'B.Com (Hons)',
+    branch: 'Commerce & Accounting',
+    academicYear: '3rd Year',
+    semester: 'Semester 5',
+    rollNumber: 'DU2022COM812',
+    bio: 'Finance & Taxation enthusiast. Managing commerce textbook exchanges across DU North Campus.',
+    targetExams: 'CAT 2026 / CA Inter',
+    defaultShippingAddress: 'Hansraj Girls Hostel, Room 204, North Campus, Delhi University',
+    hostelRoom: 'HG Hostel - 204',
+    emergencyContact: '+91 97222 88888',
+    preferredLanguage: 'English & Hindi',
+    isBanned: false,
+    walletBalance: 1450,
+    phone: '+91 97222 33445',
+    isEmailVerified: false,
+    createdAt: '2026-08-20T14:30:00Z'
+  },
+  {
+    id: 'usr-mod-1',
+    name: 'Rohan Deshmukh (Mod)',
+    email: 'rohan.mod@sppu.edu',
+    role: 'moderator',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    university: 'SPPU',
+    collegeName: 'College of Engineering Pune (COEP)',
+    campusLocation: 'Pune, Maharashtra',
+    degree: 'B.Tech / B.E',
+    branch: 'Mechanical Engineering',
+    academicYear: '4th Year',
+    semester: 'Semester 7',
+    rollNumber: 'COEP21ME034',
+    bio: 'Final year Mech engineer & SSS Campus Moderator. Ensuring verified price transparency.',
+    targetExams: 'GATE ME 2027 & PSU Exams',
+    defaultShippingAddress: 'COEP Hostel Block D, Room 402, Shivajinagar, Pune',
+    hostelRoom: 'Hostel D - 402',
+    emergencyContact: '+91 98333 77777',
+    preferredLanguage: 'English & Marathi',
+    isBanned: false,
+    walletBalance: 500,
+    phone: '+91 98333 44556',
+    isEmailVerified: true,
+    createdAt: '2026-08-25T09:15:00Z'
+  }
+];
+
+export const INITIAL_WALLET_TRANSACTIONS: WalletTransaction[] = [
+  {
+    id: 'tx-1001',
+    userId: 'usr-admin',
+    type: 'credit',
+    category: 'wallet_topup',
+    title: 'UPI Wallet Recharge',
+    amount: 1000,
+    description: 'Instant UPI top-up via GooglePay / PhonePe',
+    timestamp: '2026-09-24 14:20',
+    status: 'Completed',
+    referenceId: 'UPI-REF-8938210'
+  },
+  {
+    id: 'tx-1002',
+    userId: 'usr-admin',
+    type: 'credit',
+    category: 'order_refund',
+    title: 'Instant Cancellation Refund',
+    amount: 520,
+    description: '100% refund credited for cancelled book order item',
+    timestamp: '2026-09-25 11:05',
+    status: 'Completed',
+    referenceId: 'RFND-SSS-92019'
+  },
+  {
+    id: 'tx-1003',
+    userId: 'usr-admin',
+    type: 'credit',
+    category: 'resale_payout',
+    title: 'Book Resale Payout',
+    amount: 930,
+    description: 'Peer-to-peer campus book sale completion',
+    timestamp: '2026-09-26 16:40',
+    status: 'Completed',
+    referenceId: 'SALE-P2P-38102'
+  }
+];
+
+
+export const INITIAL_USED_BOOKS: Book[] = [
+  {
+    id: 'used-001',
+    title: 'Design and Analysis of Algorithms',
+    author: 'Ellis Horowitz, Sartaj Sahni, Sanguthevar Rajasekaran',
+    isbn: '978-8173716126',
+    edition: '2nd Edition',
+    publisher: 'Universities Press',
+    category: 'Computer Science & IT',
+    description: 'Neatly maintained textbook with highlighted key algorithm concepts. No missing pages. Perfect for 5th semester AKTU & VTU CSE students.',
+    coverImage: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600&auto=format&fit=crop&q=80',
+    rating: 4.8,
+    type: 'used_resale',
+    sellerId: 'usr-student-1',
+    sellerName: 'Aarav Sharma',
+    sellerCampus: 'BMS College of Engineering, Bangalore',
+    sellerUniversity: 'VTU',
+    condition: 'Like New',
+    resalePrice: 280,
+    originalMrp: 625,
+    isAvailableForExchange: true,
+    exchangeTargetDesc: 'Looking for Database Systems (Korth 7th Ed) or Compiler Design (Ullman)',
+    status: 'available',
+    createdAt: '2026-09-10T11:00:00Z'
+  },
+  {
+    id: 'used-002',
+    title: 'Principles of Compiler Design',
+    author: 'Alfred V. Aho, Jeffrey D. Ullman (Dragon Book)',
+    isbn: '978-8185015613',
+    edition: '2nd Edition',
+    publisher: 'Pearson',
+    category: 'Computer Science & IT',
+    description: 'The legendary Dragon Book for Compilers. Contains handwritten lecture summary sheets tucked inside. Great condition.',
+    coverImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&auto=format&fit=crop&q=80',
+    rating: 4.9,
+    type: 'used_resale',
+    sellerId: 'usr-student-2',
+    sellerName: 'Ananya Verma',
+    sellerCampus: 'Hansraj College, New Delhi',
+    sellerUniversity: 'DU',
+    condition: 'Good',
+    resalePrice: 320,
+    originalMrp: 799,
+    isAvailableForExchange: true,
+    exchangeTargetDesc: 'Willing to trade for Computer Networks (Peterson & Davie) or OS Galvin',
+    status: 'available',
+    createdAt: '2026-09-12T15:20:00Z'
+  },
+  {
+    id: 'used-003',
+    title: 'Theory of Machines',
+    author: 'R.S. Khurmi, J.K. Gupta',
+    isbn: '978-8121925242',
+    edition: '14th Revised Edition',
+    publisher: 'S Chand Publishing',
+    category: 'Mechanical Engineering',
+    description: 'Essential textbook for 4th/5th Sem Mechanical Engineering. Solved question papers attached from last 5 years.',
+    coverImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80',
+    rating: 4.6,
+    type: 'used_resale',
+    sellerId: 'usr-mod-1',
+    sellerName: 'Rohan Deshmukh',
+    sellerCampus: 'COEP Pune',
+    sellerUniversity: 'SPPU',
+    condition: 'Fair',
+    resalePrice: 240,
+    originalMrp: 595,
+    isAvailableForExchange: false,
+    status: 'available',
+    createdAt: '2026-09-14T09:00:00Z'
+  },
+  {
+    id: 'used-004',
+    title: 'Robbins & Cotran Pathologic Basis of Disease',
+    author: 'Vinay Kumar, Abul K. Abbas, Jon C. Aster',
+    isbn: '978-0323531139',
+    edition: '10th International Edition',
+    publisher: 'Elsevier',
+    category: 'Medical & Dental',
+    description: 'Gold standard Pathology textbook for 2nd Year MBBS. All histology diagrams intact with colored tabs.',
+    coverImage: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&auto=format&fit=crop&q=80',
+    rating: 5.0,
+    type: 'used_resale',
+    sellerId: 'usr-student-2',
+    sellerName: 'Ananya Verma',
+    sellerCampus: 'Lady Hardinge Medical / DU',
+    sellerUniversity: 'DU',
+    condition: 'Like New',
+    resalePrice: 1100,
+    originalMrp: 2650,
+    isAvailableForExchange: true,
+    exchangeTargetDesc: 'Looking for Harrison Principles of Internal Medicine or K.D. Tripathi Pharmacology',
+    status: 'available',
+    createdAt: '2026-09-18T16:45:00Z'
+  }
+];
+
+export const INITIAL_EBOOKS: Book[] = [
+  {
+    id: 'ebook-001',
+    title: 'Modern Web Engineering & Full-Stack Architectures (2026 Edition)',
+    author: 'Prof. S. R. Ramanujan & Dr. Elena Rostova',
+    isbn: '978-0998877661',
+    publisher: 'Academic Digital Press',
+    category: 'Computer Science & IT',
+    description: 'Complete hands-on curriculum covering modern reactive architectures, microservices, cloud deployments, caching matrices, and distributed systems.',
+    coverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80',
+    rating: 4.9,
+    ratingsCount: 1420,
+    pages: 412,
+    type: 'ebook',
+    ebookPrice: 99,
+    fileSize: '14.8 MB',
+    previewPages: 12,
+    sampleContent: [
+      'CHAPTER 1: FOUNDATIONS OF REACTIVE ARCHITECTURES\n\nIn modern high-throughput web engineering, monolithic request-response models have given way to asynchronous, event-driven reactive paradigms. When a student places an order on a platform like Study Student Shop (SSS), the system must immediately confirm the transaction while asynchronously dispatching drop-shipping bots to compare and purchase from the lowest-priced supplier in real-time.\n\nKey Tenet 1: Non-blocking I/O ensures the web server can serve thousands of concurrent search queries without waiting for external affiliate scrapers to return.\n\nKey Tenet 2: Idempotency is crucial in automated purchasing workers to prevent duplicate orders if an external vendor API experiences temporary timeouts.',
+      'CHAPTER 2: STATE MANAGEMENT & REALTIME CACHING\n\nClient-side performance depends heavily on intelligent caching layers. For textbook metadata that changes infrequently (ISBN, Author, Edition, Cover Image), a 24-hour cache TTL reduces Google Books API overhead by over 92%.\n\nConversely, dynamic price feeds from Amazon, Flipkart, and Bookswagon require short-term 5-to-15 minute TTL caches to balance fresh bargain detection with rate-limit compliance.',
+      'CHAPTER 3: INDIAN UNIVERSITY GRADING SYSTEMS & METRICS\n\nIndian engineering and degree universities employ distinct formulas for SGPA/CGPA calculations. For instance, AKTU and VTU commonly use (CGPA - 0.75) * 10 to determine equivalent percentage marks, while Delhi University (DU) prescribes CGPA * 9.5, and Mumbai University utilizes a non-linear piecewise formula.\n\nUnderstanding these conversions enables students to accurately calculate eligibility for campus placements, GATE examinations, and higher education admissions abroad.'
+    ],
+    status: 'available',
+    createdAt: '2026-08-10T10:00:00Z'
+  },
+  {
+    id: 'ebook-002',
+    title: 'GATE 2027 CSE: Complete Solved Papers & High-Yield Notes',
+    author: 'SSS Academic Editorial Board',
+    isbn: '978-9388123456',
+    publisher: 'Student Success Media',
+    category: 'Competitive Exams (GATE/CAT/UPSC)',
+    description: 'Comprehensive 15-year chapter-wise solved questions with detailed explanations for Algorithms, Data Structures, TOC, Compiler Design, OS, DBMS, and Discrete Mathematics.',
+    coverImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format&fit=crop&q=80',
+    rating: 4.9,
+    ratingsCount: 3890,
+    pages: 650,
+    type: 'ebook',
+    ebookPrice: 149,
+    fileSize: '28.4 MB',
+    previewPages: 18,
+    sampleContent: [
+      'MODULE 1: ALGORITHMS & ASYMPTOTIC COMPLEXITY\n\nMastering Recurrence Relations:\n1. Master Theorem Case 1: T(n) = aT(n/b) + f(n). If f(n) = O(n^(log_b(a) - epsilon)), then T(n) = Theta(n^(log_b(a))).\n2. Master Theorem Case 2: If f(n) = Theta(n^(log_b(a))), then T(n) = Theta(n^(log_b(a)) * log n).\n3. Master Theorem Case 3: If f(n) = Omega(n^(log_b(a) + epsilon)), and regularity condition af(n/b) <= cf(n) holds for c < 1, then T(n) = Theta(f(n)).\n\nHigh-Yield Tip: Whenever log base does not match, apply the Substitution Method or Akra-Bazzi method for advanced recurrences.',
+      'MODULE 2: OPERATING SYSTEMS & SYNCHRONIZATION\n\nCritical Section Problem Requirements:\n1. Mutual Exclusion: If process P is executing in its critical section, no other process can execute in their critical section.\n2. Progress: If no process is executing and some processes wish to enter, selection cannot be postponed indefinitely.\n3. Bounded Waiting: A bound exists on how many times other processes can enter their critical sections after a process has requested entry.'
+    ],
+    status: 'available',
+    createdAt: '2026-08-12T10:00:00Z'
+  },
+  {
+    id: 'ebook-003',
+    title: 'Machine Learning & Deep Learning Core Handbook',
+    author: 'Dr. Vivek Agrawal & Dr. Priya Sundaram',
+    isbn: '978-9351239871',
+    publisher: 'AI Research Publications',
+    category: 'Computer Science & IT',
+    description: 'Practical guide to PyTorch, Transformers, Attention Mechanisms, Backpropagation, Gradient Descent optimization, and LLM fine-tuning techniques.',
+    coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&auto=format&fit=crop&q=80',
+    rating: 4.8,
+    ratingsCount: 2110,
+    pages: 520,
+    type: 'ebook',
+    ebookPrice: 129,
+    fileSize: '21.5 MB',
+    previewPages: 15,
+    sampleContent: [
+      'CHAPTER 1: THE MATHEMATICS OF DEEP LEARNING\n\nEvery deep neural network is essentially a parameterized non-linear function approximator. Through backpropagation and automatic differentiation, we compute gradients with respect to weights and biases, updating parameters via Adam or SGD.\n\nLoss Function Formulation:\nCross-Entropy Loss = -SUM(y_i * log(p_i))\nMean Squared Error = (1/N) * SUM((y_i - y_hat_i)^2)',
+      'CHAPTER 2: TRANSFORMER ARCHITECTURES & SELF-ATTENTION\n\nSelf-Attention Formula:\nAttention(Q, K, V) = softmax((Q * K^T) / sqrt(d_k)) * V\n\nWhere Q is the Query matrix, K is the Key matrix, and V is the Value matrix. The scaling factor sqrt(d_k) prevents the dot products from growing excessively large for high dimensions.'
+    ],
+    status: 'available',
+    createdAt: '2026-08-18T10:00:00Z'
+  }
+];
+
+export const INITIAL_EXCHANGES: ExchangeProposal[] = [
+  {
+    id: 'exch-101',
+    senderId: 'usr-student-2',
+    senderName: 'Ananya Verma',
+    senderCollege: 'Hansraj College, New Delhi',
+    receiverId: 'usr-student-1',
+    receiverName: 'Aarav Sharma',
+    offeredBookId: 'used-002',
+    offeredBookTitle: 'Principles of Compiler Design (Dragon Book)',
+    offeredBookImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&auto=format&fit=crop&q=80',
+    requestedBookId: 'used-001',
+    requestedBookTitle: 'Design and Analysis of Algorithms (Horowitz)',
+    requestedBookImage: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600&auto=format&fit=crop&q=80',
+    message: 'Hey Aarav! I have the Compiler Design 2nd edition in great condition. Would love to trade for your DAA book for our 5th sem course.',
+    meetupLocation: 'Inter-College Tech Fest / Central Library Lawn',
+    status: 'pending',
+    createdAt: '2026-09-24T14:00:00Z',
+    updatedAt: '2026-09-24T14:00:00Z'
+  }
+];
+
+export const INITIAL_ORDERS: Order[] = [
+  {
+    id: 'SSS-ORD-9842',
+    userId: 'usr-student-1',
+    userName: 'Aarav Sharma',
+    userEmail: 'aarav.sharma@vtu.ac.in',
+    userPhone: '+91 98111 22334',
+    shippingAddress: 'Room 304, Kaveri Hostel, BMS College of Engineering, Bull Temple Road',
+    collegeCampus: 'BMS College of Engineering, Bangalore',
+    items: [
+      {
+        id: 'item-1',
+        bookId: 'b-001',
+        title: 'Operating System Concepts (10th Edition)',
+        author: 'Silberschatz, Galvin',
+        coverImage: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+        type: 'aggregated_new',
+        price: 680,
+        quantity: 1,
+        vendorName: 'Flipkart',
+        externalOrderId: 'FK-99382109',
+        trackingNumber: 'E-KART-BLR-4892'
+      }
+    ],
+    subtotal: 680,
+    discount: 50,
+    shippingFee: 0,
+    totalAmount: 630,
+    totalSaved: 369,
+    paymentMethod: 'UPI',
+    paymentStatus: 'Paid',
+    status: 'Auto-Ordered with Vendor',
+    dropshipVendor: 'Flipkart (Lowest Price Verified)',
+    externalOrderId: 'FK-99382109',
+    externalTrackingId: 'E-KART-BLR-4892',
+    fulfillmentLog: [
+      { timestamp: '2026-09-25 10:14:02', step: 'Order Placed on SSS', detail: 'Payment of ₹630 verified via UPI Ref: 9832049102' },
+      { timestamp: '2026-09-25 10:14:05', step: 'Arbitrage Price Evaluation', detail: 'Flipkart identified as lowest vendor at ₹680 (vs Amazon ₹799, Bookswagon ₹745)' },
+      { timestamp: '2026-09-25 10:14:18', step: 'Automated Bot Purchase', detail: 'SSS Dropship Bot auto-placed order with Flipkart ID #FK-99382109' },
+      { timestamp: '2026-09-25 14:30:00', step: 'Vendor Dispatched', detail: 'Package packed and picked up by Ekart Logistics' }
+    ],
+    createdAt: '2026-09-25T10:14:00Z'
+  }
+];
+
+export const INITIAL_AUDIT_LOGS: AuditLog[] = [
+  {
+    id: 'log-001',
+    actorId: 'usr-admin',
+    actorName: 'Ekbal (System Admin)',
+    actorRole: 'admin',
+    actionType: 'MAINTENANCE_TOGGLE',
+    details: 'System initialized in Normal Operational Mode (Maintenance Disabled)',
+    ipAddress: '192.168.1.101',
+    timestamp: '2026-09-26 18:00:00'
+  },
+  {
+    id: 'log-002',
+    actorId: 'usr-admin',
+    actorName: 'Ekbal (System Admin)',
+    actorRole: 'admin',
+    actionType: 'USER_ROLE_CHANGE',
+    details: 'Granted "verified_seller" authority to user Ananya Verma (usr-student-2)',
+    ipAddress: '192.168.1.101',
+    timestamp: '2026-09-26 19:15:30'
+  },
+  {
+    id: 'log-003',
+    actorId: 'system-bot',
+    actorName: 'SSS Dropship Worker Bot',
+    actorRole: 'admin',
+    actionType: 'AUTO_ORDER_DISPATCH',
+    details: 'Auto-ordered ISBN 978-1119456339 on Flipkart at ₹680 for Order #SSS-ORD-9842',
+    ipAddress: '127.0.0.1 (Worker)',
+    timestamp: '2026-09-26 20:30:12'
+  },
+  {
+    id: 'log-004',
+    actorId: 'system-scraper',
+    actorName: 'Price Feed Scraper',
+    actorRole: 'moderator',
+    actionType: 'PRICE_SCRAPER_SYNC',
+    details: 'Synchronized real-time pricing feeds for 120 academic titles across Amazon & Flipkart',
+    ipAddress: '127.0.0.1 (Worker)',
+    timestamp: '2026-09-26 21:00:00'
+  }
+];
+
+export const INITIAL_MAINTENANCE: MaintenanceState = {
+  isMaintenanceMode: false,
+  message: 'Study Student Shop is undergoing scheduled semester database upgrades. We will be back online shortly!',
+  estimatedUptime: '2026-09-27T04:00:00Z',
+  updatedBy: 'Ekbal (System Admin)',
+  updatedAt: '2026-09-26T20:00:00Z',
+  bypassCode: 'SSS-ADMIN-DEV-2026'
+};

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "log-1790443462500",
+    "actorId": "dropship-bot",
+    "actorName": "Automated Dropship Worker",
+    "actorRole": "admin",
+    "actionType": "AUTO_ORDER_DISPATCH",
+    "details": "Fulfilled Order #SSS-ORD-6707 on Amazon (External ID: AM-87642409)",
+    "ipAddress": "127.0.0.1 (Worker)",
+    "timestamp": "26/9/2026, 10:54:22 pm"
+  },
+  {
+    "id": "log-001",
+    "actorId": "usr-admin",
+    "actorName": "Ekbal (System Admin)",
+    "actorRole": "admin",
+    "actionType": "MAINTENANCE_TOGGLE",
+    "details": "System initialized in Normal Operational Mode",
+    "ipAddress": "192.168.1.101",
+    "timestamp": "2026-09-26 18:00:00"
+  }
+]
